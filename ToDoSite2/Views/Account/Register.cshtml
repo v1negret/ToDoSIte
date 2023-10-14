@@ -1,0 +1,25 @@
+﻿@using ToDoSite2.Models.ViewModels;
+@model RegisterViewModel
+
+<h2>Регистрация нового пользователя</h2>
+<form asp-controller="Account" asp-action="Register" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div>
+        <label asp-for="Email">Email</label> <br />
+        <input asp-for="Email"/>
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label asp-for="Password">Пароль</label> <br />
+        <input asp-for="Password"/>
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div>
+        <label asp-for="ConfirmPassword">Подтвердите пароль</label> <br />
+        <input asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword"></span>
+    </div>
+    <div>
+        <input type="submit" values="Зарегестрироваться"/>
+    </div>
+</form>

@@ -1,0 +1,11 @@
+﻿@using ToDoSite2.Models;
+@model Note
+
+<div class="text-center">
+    <h1 class="display-4">Вы уверены, что хотите завершить задачу?</h1>
+    <h2>@Model.Title</h2>
+
+    <form asp-controller="Note" asp-action="DeleteConfirmed" method="post" asp-route-id="@Model.Id">
+        <input type="submit" class="btn btn-danger" value="Выполнил"></input>
+    </form>
+</div>

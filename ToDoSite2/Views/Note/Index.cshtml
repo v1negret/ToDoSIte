@@ -1,0 +1,35 @@
+﻿@using ToDoSite2.Models;
+@model List<Note>?
+
+<div class="text-center">
+    <h1 class="display-4">Добро пожаловать!</h1>
+</div>
+<a asp-controller="Note" asp-action="Add"><button type="button" class="btn btn-primary">Добавить задачу</button></a>
+@if (@Model.Count != 0)
+{
+    <table class="table table-bordered">
+        @foreach (var note in Model)
+        {
+            <tr>
+                <td>@note.Title</td>
+                <td>@note.Description</td>
+                <td>@note.ExtremeDate</td>
+                <td>
+
+                    <a asp-controller="Note" asp-action="Delete" asp-route-id="@note.Id">
+                        <button type="button" class="btn btn-success">Выполнил</button>
+                    </a>
+
+                    <a asp-controller="Note" asp-action="Edit" asp-route-id="@note.Id">
+                        <button class="btn btn-primary">Изменить</button>
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>You have no tasks</p>
+}
