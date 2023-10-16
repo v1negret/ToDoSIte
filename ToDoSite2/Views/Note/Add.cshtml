@@ -3,22 +3,23 @@
 <form asp-controller="Note" asp-action="Add" method="post">
     <div asp-validation-summary="ModelOnly"></div>
     <div>
-        <label asp-for="Title">Название</label> <br/>
-        <input asp-for=Title></input>
+        <label asp-for="Title">Название</label> <br />
+        <input asp-for="Title"></input>
         <span asp-validation-for="Title"></span>
     </div>
     <div>
-        <label asp-for="Description">Описание</label> <br/>
+        <label asp-for="Description">Описание</label> <br />
         <textarea asp-for="Description"></textarea>
         <span asp-validation-for="Description"></span>
     </div>
+
     <div>
-        <label asp-for="Title">Дата выполнения</label> <br/>
+        <label asp-for="ExtremeDate">Дата выполнения</label> <br />
         <input type="datetime-local" asp-for="ExtremeDate" />
         <span asp-validation-for="ExtremeDate"></span>
     </div>
     <div>
-        <input type="submit" />
+        <button class="btn btn-primary" type="submit">Добавить</button>
     </div>
 
 </form>

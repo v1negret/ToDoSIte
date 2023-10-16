@@ -45,6 +45,7 @@ namespace ToDoSite2.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Note note)
         {
+
             if (ModelState.IsValid)
             {
                 note.UserId = _userManager.GetUserId(HttpContext.User);
